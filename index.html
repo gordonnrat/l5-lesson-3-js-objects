@@ -36,8 +36,10 @@
         Assign a variable to the dinosaurs array.
         Select and assign a varible to <main>
         */
-
-
+        const dinos = dinosaurs;
+        console.log(dinos);
+        const container = document.querySelector('main');
+        
 
         /* Exercise 9
         Use the .forEach() method to loop through each dinosaur object and show it on the page.
@@ -46,6 +48,27 @@
         Remember to use the += operator so the additions are cumulative.
         */
 
+        dinos.forEach(function (dino) {
+            console.log(dino);
+            const dinoHTML = `
+                <div class="dinosaur">
+                    <div class="dino-image">
+                        <img src="images/${dino.img}">
+                    </div>
+                    <div class="dino-info">
+                        <h3>${dino.name}</h3>
+                        <p>
+                            Diet: ${dino.diet} <br />
+                            Length: ${dino.length} <br />
+                            Period: ${dino.period} <br />
+                        </p>
+                        <p>${dino.info}</p>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML += dinoHTML;
+        })
 
 
 
